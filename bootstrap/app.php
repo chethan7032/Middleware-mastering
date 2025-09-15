@@ -11,7 +11,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Register global HTTP middleware stack
+        // $middleware->append(\App\Http\Middleware\CheckRoleMiddleware::class);
+
+        //Demo of Middleware groups
+        $middleware->appendToGroup('testgroup',[
+            \App\Http\Middleware\CheckRoleMiddleware::class,
+            \App\Http\Middleware\TestMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
