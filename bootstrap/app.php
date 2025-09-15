@@ -15,10 +15,17 @@ return Application::configure(basePath: dirname(__DIR__))
         // $middleware->append(\App\Http\Middleware\CheckRoleMiddleware::class);
 
         //Demo of Middleware groups
-        $middleware->appendToGroup('testgroup',[
-            \App\Http\Middleware\CheckRoleMiddleware::class,
-            \App\Http\Middleware\TestMiddleware::class,
-        ]);
+        // $middleware->appendToGroup('testgroup',[
+        //     \App\Http\Middleware\CheckRoleMiddleware::class,
+        //     \App\Http\Middleware\TestMiddleware::class,
+        // ]);
+
+        //Middleware aliases
+        // $middleware->alias([
+        //     'checkrole' => \App\Http\Middleware\CheckRoleMiddleware::class,
+        //     'testmiddleware' =>   \App\Http\Middleware\TestMiddleware::class,
+        // ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
