@@ -10,6 +10,9 @@
     <form action="{{route('post.store')}}" method="POST">
         @csrf
         <div>
+            <input type="hidden" name="user_id" value="2">
+        </div>
+        <div>
             <input type="text" name="title" placeholder="Post Title">
         </div>
         <br>
